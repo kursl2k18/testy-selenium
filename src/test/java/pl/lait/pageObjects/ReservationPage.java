@@ -1,5 +1,6 @@
 package pl.lait.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,6 +67,12 @@ public class ReservationPage {
 	public void roundTripRadioClick() {
 		roundTripRadio.click();
 	}
+	
+	public void fromPort(String portValue) {
+		Select p = new Select(fromPort);
+		p.selectByValue(portValue);
+	}
+	
 	public void passengersCount(String count) {
 		Select passCountSelect = new Select(passCount);
 		passCountSelect.selectByValue(count);
@@ -85,6 +92,12 @@ public class ReservationPage {
 		Select d = new Select(toDay);
 		d.selectByValue(day);
 	}
+	
+	public void toPort(String portValue) {
+		Select p = new Select(toPort);
+		p.selectByValue(portValue);
+	}
+	
 	
 	public void businessClass() {
 		businessClass.click();
