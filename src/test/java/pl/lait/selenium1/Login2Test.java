@@ -7,8 +7,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Sleeper;
 
 import pl.lait.pageObjects.LoginPage;
+import pl.lait.pageObjects.Reservation2Page;
 import pl.lait.pageObjects.ReservationPage;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -49,7 +51,27 @@ public class Login2Test {
 		Init.sleep(1);
 		reservationPage.passengersCount("3");
 		reservationPage.fromPort("London");
-		reservationPage.on("11", "30");
+		reservationPage.on("12", "1");
+		reservationPage.toPort("Paris");
+		reservationPage.to("12", "3");
+		reservationPage.businessClass();
+		reservationPage.airline("Blue Skies Airlines");
+		Init.sleep(4);
+		reservationPage.continueBtnClick();
+		Init.sleep(3);
+		
+		Reservation2Page r2p = new Reservation2Page();
+		r2p.radio2Click();
+		r2p.radio6Click();
+		r2p.continueBtnClick();
+		
+		Init.sleep(6);
+		r2p.pass0("Rycho", "Zwiedzacz", "Hindu");
+		
+		r2p.creditCard("MasterCard");
+		r2p.securePurchaseClick();
+		Init.sleep(10);
+		
 		
 		
 	}
