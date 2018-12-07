@@ -34,7 +34,7 @@ public class Login2Test {
 		loginPage.loginAs("adamdz", "qwe123");
 		System.out.println("koniec testu login");
 	}
-	
+	@Ignore
 	@Test
 	public void reservation() {
 		// 1 - otwieramy przegladarke i logujemy sie do aplikacji
